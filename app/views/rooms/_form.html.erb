@@ -1,0 +1,8 @@
+<%= simple_form_for @room do |f| %>
+  <%= select_tag(:room_type_id, options_for_select(@room_types), :prompt => "Select a category") %>
+  <%= f.input :address, label: "Address" %>
+  <%= f.input :description, label: "Property Description" %>
+  <%= f.input :price, label: "Price" %>
+  <%= f.input :contact_info, label: "Contact Information" %>
+  <%= f.button :submit %>
+<% end %>

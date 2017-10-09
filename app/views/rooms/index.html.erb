@@ -1,0 +1,7 @@
+<% if !user_signed_in? %>
+  <p> Please sign in to post a room </p>
+<% end %>
+
+<% @rooms.each do |room| %>
+<h1><%= link_to room.address, room_path(room) %></h2>
+<% end %>
