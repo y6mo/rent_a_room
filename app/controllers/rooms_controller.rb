@@ -28,6 +28,7 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
+    @room.type_id = params[:type_id]
     if @room.update(room_params)
       redirect_to room_path(@room)
     else
