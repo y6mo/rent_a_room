@@ -9,7 +9,6 @@ class RoomsController < ApplicationController
 
   def new
     @room = current_user.rooms.build
-    @room_types = RoomType.all.map{ |c| [c.name, c.id] }
   end
 
   def create
