@@ -1,5 +1,5 @@
 <%= simple_form_for @room do |f| %>
-  <%= f.input :type_id, collection: @categories, prompt: "Select a catagory" %>
+  <%= select_tag(:type_id, options_for_select(@types), :prompt => "Choose the room type") %>
   <%= f.input :address, label: "Address" %>
   <%= f.input :description, label: "Property Description" %>
   <%= f.input :price, label: "Price" %>

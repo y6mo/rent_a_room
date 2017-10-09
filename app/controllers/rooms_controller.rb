@@ -24,6 +24,7 @@ class RoomsController < ApplicationController
 
   def edit
     @room = Room.find(params[:id])
+    @types = Type.all.map { |a| [a.name, a.id] }
   end
 
   def update
