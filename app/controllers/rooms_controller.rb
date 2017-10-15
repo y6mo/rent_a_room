@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all.order("created_at DESC")
+    #if a type of room is chosen, only display rooms with that type
+    if params[:type].blank?
+      @rooms = Room.all.order("created_at DESC")
+    else
+      @rooms = Room.where(:type_id => @type_id)
+    end
   end
 
   def show
