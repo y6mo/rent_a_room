@@ -1,3 +1,10 @@
 <h1>Edit Room</h1>
-
-<%= render 'form' %>
+<!-- contains form that is used when a user edits an existing form -->
+<%= simple_form_for @room, :html => { :multipart => true } do |f| %>
+  <%= f.select :type_id, @types %>
+  <%= f.input :address, label: "Address" %>
+  <%= f.input :description, label: "Property Description" %>
+  <%= f.input :price, label: "Price" %>
+  <%= f.input :contact_info, label: "Contact Information" %>
+  <%= f.button :submit %>
+<% end %>

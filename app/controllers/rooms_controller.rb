@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     @room.type_id = params[:type_id]
+    #only redirect if a new room is created
     if @room.save
       redirect_to root_path
     else
@@ -30,6 +31,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     @room.type_id = params[:type_id]
+    #only redirect if room is updated
     if @room.update(room_params)
       redirect_to room_path(@room)
     else
